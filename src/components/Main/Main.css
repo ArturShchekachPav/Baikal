@@ -1,0 +1,126 @@
+.main__title {
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.333%;
+  letter-spacing: -1px;
+  max-width: 655px;
+  margin: 156px 0 0 0;
+}
+
+.main__form {
+  display: flex;
+  margin-top: 79px;
+  gap: 12px;
+  max-width: 700px;
+  min-height: 67px;
+}
+
+.main__fieldset {
+  border-radius: 3px;
+  background: #FFF;
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.main__form-field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 47px;
+  padding: 10px 0;
+}
+
+.main__label, .main__data-header {
+  position: absolute;
+  top: -36px;
+  color: #B7B7B7;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.main__input {
+  border: none;
+  min-height: 100%;
+  color: #606F7A;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  border-right: 1px solid #DEDEDE;
+}
+
+.main__form-field:first-child .main__input {
+  margin-left: 30px;
+  text-align: left;
+}
+
+.main__input:focus-visible, .main__form-field:has(+.main__form-field .main__input:focus-visible) .main__input {
+  outline: none;
+  border-right: 1px solid transparent;
+}
+
+.main__form-field:has(.main__input:focus-visible) {
+  border-radius: 3px;
+  background: #FFF;
+  box-shadow: 0px 4px 40px 0px rgba(93, 170, 255, 0.10);
+}
+
+.main__input:focus-visible + .main__label {
+  color: #606F7A;
+}
+
+.main__data-value {
+  color: #B7B7B7;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  min-width: max-content;
+  margin-right: 32px;
+  margin-left: 32px;
+}
+
+.main__submit {
+  border-radius: 3px;
+  background: #5DAAFF;
+  box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.29);
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  border: none;
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  padding: 0 34px 0 30px;
+}
+
+.main__submit:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 9px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../images/next-button-arrow.svg);
+}

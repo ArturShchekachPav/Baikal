@@ -1,0 +1,26 @@
+.app {
+  min-height: 100vh;
+  background-color: #EFF3F9;
+  box-sizing: border-box;
+  padding-top: 49px;
+  position: relative;
+  overflow: hidden;
+}
+
+.illustration {
+  background-image: url(../../images/illustration.jpg);
+  width: 1375px;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: -12px;
+  right: -124px;
+}
+
+.container {
+  max-width: 1246px;
+  padding: 0 50px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

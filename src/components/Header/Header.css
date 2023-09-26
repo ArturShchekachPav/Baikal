@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.header__logo {
+  background-image: url(../../images/baikal-logo.png);
+  width: 163px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header__button {
+  margin-left: auto;
+  border-radius: 3px;
+  background-color: #FFF;
+  box-shadow: 0 4px 40px 0 rgba(46, 80, 87, 0.12);
+  padding: 14px 21px;
+  border: none;
+  color: #606F7A;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+}
