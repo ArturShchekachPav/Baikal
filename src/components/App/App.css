@@ -9,8 +9,10 @@
 
 .illustration {
   background-image: url(../../images/illustration.jpg);
-  width: 1375px;
-  height: 700px;
+  width: 95%;
+  aspect-ratio: 1375/700;
+  max-height: 77%;
+  background-position: bottom right;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;

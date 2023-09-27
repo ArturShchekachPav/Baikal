@@ -1,3 +1,8 @@
+.main {
+  position: relative;
+  z-index: 1;
+}
+
 .main__title {
   color: #606F7A;
   font-family: "Open Sans", sans-serif;
@@ -22,7 +27,8 @@
   border-radius: 3px;
   background: #FFF;
   box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.04);
-  display: flex;
+  display: grid;
+  grid-template-columns: 135fr 145fr 108fr 136fr;
   margin: 0;
   border: 0;
   padding: 0;
@@ -34,6 +40,7 @@
   position: relative;
   min-height: 47px;
   padding: 10px 0;
+  flex: 1;
 }
 
 .main__label, .main__data-header {
@@ -47,41 +54,6 @@
   line-height: 100%;
   letter-spacing: 0.2px;
   margin: 0;
-}
-
-.main__input {
-  border: none;
-  min-height: 100%;
-  color: #606F7A;
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  border-right: 1px solid #DEDEDE;
-}
-
-.main__form-field:first-child .main__input {
-  margin-left: 30px;
-  text-align: left;
-}
-
-.main__input:focus-visible, .main__form-field:has(+.main__form-field .main__input:focus-visible) .main__input {
-  outline: none;
-  border-right: 1px solid transparent;
-}
-
-.main__form-field:has(.main__input:focus-visible) {
-  border-radius: 3px;
-  background: #FFF;
-  box-shadow: 0px 4px 40px 0px rgba(93, 170, 255, 0.10);
-}
-
-.main__input:focus-visible + .main__label {
-  color: #606F7A;
 }
 
 .main__data-value {
@@ -123,4 +95,138 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../../images/next-button-arrow.svg);
+}
+
+.p-inputtext {
+  width: 100%;
+}
+
+.select {
+  width: 100%;
+  min-height: 100%;
+  border-right: 1px solid #DEDEDE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select:has(.select__control--menu-is-open) {
+  border-right: 1px solid transparent;
+}
+
+.select .select__control, .select .select__control--is-focused {
+  border-radius: 0;
+  border-top: none;
+  border-bottom: none;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.select .select__control:hover {
+  border-color: transparent;
+}
+
+.select__indicator-separator {
+  display: none;
+}
+
+.select .select__indicator {
+  padding: 0;
+  margin-left: 9px;
+}
+
+.select .select__value-container {
+  padding: 0;
+  -webkit-flex: initial;
+  -ms-flex: initial;
+  flex: initial;
+}
+
+.p-autocomplete {
+  min-height: 100%;
+  border-right: 1px solid #DEDEDE;
+}
+
+.p-inputwrapper-focus {
+  border-right: 1px solid transparent;
+}
+
+.p-autocomplete-input {
+  padding: 0 0 0 30px;
+  border: none;
+}
+
+.p-inputtext:enabled:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.select .select__single-value, .select .select__option, .p-autocomplete-input, .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  color: #606F7A;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  padding: 0 0 0 30px;
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #EBEBEB;
+}
+
+.select .select__option {
+  padding: 0;
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #EBEBEB;
+  background-color: #fff;
+}
+
+.select .select__option:active {
+  background-color: #fff;
+}
+
+.p-autocomplete-panel {
+  border-top: 1px solid #EBEBEB;
+  margin-top: 9px;
+  box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.10);
+  border-radius: 3px;
+}
+
+.main__form-field:has(.p-inputwrapper-focus), .main__form-field:has(.select__control--menu-is-open) {
+  box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.10);
+  border-radius: 3px;
+  position: relative;
+  z-index: 6;
+}
+
+.main__form-field:has(.p-inputwrapper-focus) .main__label, .main__form-field:has(.select__control--menu-is-open) .main__label {
+  color: #606F7A;
+}
+
+.main__form-field:has(+.main__form-field:has(.select__control--menu-is-open)) .p-inputwrapper-focus, .main__form-field:has(+.main__form-field:has(.select__control--menu-is-open)) .select__control--menu-is-open {
+  border-right: 1px solid transparent;
+}
+
+.p-autocomplete-panel .p-autocomplete-items {
+  padding: 0;
+}
+
+.select .select__menu {
+  border-radius: 0;
+  margin: 9px 0 0 0;
+  box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.10);
+}
+
+.select .select__menu-list {
+  padding: 0;
 }
