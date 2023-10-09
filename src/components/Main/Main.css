@@ -213,7 +213,7 @@
   color: #606F7A;
 }
 
-.main__form-field:has(+.main__form-field:has(.select__control--menu-is-open)) .p-inputwrapper-focus, .main__form-field:has(+.main__form-field:has(.select__control--menu-is-open)) .select__control--menu-is-open {
+.main__form-field:has(+.main__form-field .select__control--is-focused) .p-autocomplete, .main__form-field:has(+.main__form-field .select__control--is-focused) .select {
   border-right: 1px solid transparent;
 }
 
