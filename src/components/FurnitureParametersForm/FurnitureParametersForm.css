@@ -1,0 +1,127 @@
+.furniture-parameters-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.furniture-parameters-form__header {
+  display: flex;
+  border-radius: 3px;
+  background: #F8FAFF;
+  align-items: center;
+  width: fit-content;
+}
+
+.furniture-parameters-form__image {
+  max-width: 108px;
+  width: 100%;
+  aspect-ratio: 108/70;
+}
+
+.furniture-parameters-form__title {
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -1px;
+  margin: 0 28px;
+}
+
+.furniture-parameters-form__label {
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.furniture-parameters-form__counter-container {
+  display: flex;
+  min-height: 53px;
+  margin: 9px 0;
+}
+
+.furniture-parameters-form__counter-button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  width: 53px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.furniture-parameters-form__counter-button_increase {
+  background-image: url(../../images/increase.svg);
+}
+
+.furniture-parameters-form__counter-button_decrease {
+  background-image: url(../../images/decrease.svg);
+}
+
+.furniture-parameters-form__counter {
+  border: none;
+  text-align: center;
+  background-color: #FFF;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.04);
+  max-width: 53px;
+  padding: 0;
+  margin: 0;
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+}
+
+.furniture-parameters-form__input {
+  border-radius: 3px;
+  background: #FFF;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.06);
+  max-width: 319px;
+  min-height: 53px;
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  padding: 0 19px;
+  border: none;
+}
+
+.furniture-parameters-form__input::placeholder {
+  color: #B7B7B7;
+}
+
+.furniture-parameters-form__buttons {
+  display: flex;
+  min-height: 55px;
+  gap: 9px;
+  margin-top: 21px;
+}
+.furniture-parameters-form__button {
+  border-radius: 5px;
+  background: #5DAAFF;
+  color: #FCFDFF;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  max-width: 206px;
+  width: 100%;
+  border: none;
+}

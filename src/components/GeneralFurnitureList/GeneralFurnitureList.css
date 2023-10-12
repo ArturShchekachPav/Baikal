@@ -1,0 +1,28 @@
+.general-furniture-list__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+}
+
+.p-scrollpanel.general-furniture-list .p-scrollpanel-content {
+  padding: 0 6px 0 0;
+}
+
+.p-scrollpanel.general-furniture-list .p-scrollpanel-wrapper {
+  border-right: 4px solid rgba(140, 140, 140, 0.15);
+}
+
+.p-scrollpanel.general-furniture-list .p-scrollpanel-bar {
+  background-color: #BDCBE0;
+  opacity: 1;
+  transition: background-color .3s;
+  width: 4px;
+  position: relative;
+}
+
+.p-scrollpanel.general-furniture-list .p-scrollpanel-bar:hover {
+  background-color: #8e9aab;
+}

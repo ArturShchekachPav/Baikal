@@ -1,0 +1,44 @@
+.furniture-for-choice {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 27px;
+  border-radius: 3px;
+  border: 1px solid #E2E4EA;
+  background-color: #F8FAFF;
+  align-items: center;
+}
+
+.furniture-for-choice__image {
+  width: 100%;
+  max-width: 120px;
+  aspect-ratio: 120/97;
+  border-right: 0.5px solid #E2E4EA;
+}
+
+.furniture-for-choice__title {
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -1px;
+  width: 100%;
+  max-width: 268px;
+}
+
+.furniture-for-choice__button {
+  border-radius: 3px;
+  background-color: #5DAAFF;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.12);
+  border: none;
+  color: #FFF;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  padding: 14px 30px;
+  cursor: pointer;
+}

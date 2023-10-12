@@ -1,0 +1,30 @@
+.furniture-selection__main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 67px;
+  margin-bottom: 85px;
+}
+
+.furniture-selection__search-container {
+  max-width: 630px;
+  display: flex;
+  flex-direction: column;
+}
+
+.furniture-selection__parameters-container {
+  max-width: 497px;
+}
+
+.furniture-selection__container-title {
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.333%;
+  letter-spacing: -1px;
+}
+
+.furniture-selection__general-furniture-list {
+  margin-top: auto;
+}

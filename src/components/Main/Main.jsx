@@ -7,7 +7,7 @@ import { AutoComplete } from "primereact/autocomplete";
 import {useState} from "react";
 import './Main.css';
 
-export default function Main() {
+export default function Main({setStep, setDeliveryData}) {
 	const russianCities = [
 		{ value: 'msk', label: 'Москва' },
 		{ value: 'spb', label: 'Петеребург' },
@@ -24,7 +24,10 @@ export default function Main() {
 
 	const {
 		handleSubmit,
-		control
+		control,
+		formState: {
+			isValid
+		}
 	} = useForm({defaultValues: {
 			delivery: russianCities[0],
 			currency: currencies[0]
@@ -38,7 +41,8 @@ export default function Main() {
 	};
 
 	function onSubmit(data) {
-		console.log(data);
+		setDeliveryData(data);
+		setStep(2);
 	}
 
 	const DropdownIndicator = (DropdownIndicatorProps
@@ -58,6 +62,22 @@ export default function Main() {
 			<h1 className="main__title">Рассчитайте стоимость&nbsp;доставки из Китая</h1>
 			<form className="main__form" onSubmit={handleSubmit(onSubmit)}
 			>
+				{isValid ?
+					<div className="main__tip main__tip-submit">
+						<p className="main__tip-text">Теперь нажмите на кнопку “Далее”</p>
+						<svg className="main__tip-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22" fill="none">
+							<path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5"/>
+							<path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5"/>
+						</svg>
+					</div>
+					: <div className="main__tip">
+						<p className="main__tip-text">Для начала заполните поля выше</p>
+						<svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22" fill="none">
+							<path d="M6 2V22" stroke="#5DAAFF" stroke-width="1.5"/>
+							<path d="M11 7L6 2L1 7" stroke="#5DAAFF" stroke-width="1.5"/>
+						</svg>
+					</div>
+				}
 				<fieldset className="main__fieldset">
 					<div className="main__form-field">
 						<Controller

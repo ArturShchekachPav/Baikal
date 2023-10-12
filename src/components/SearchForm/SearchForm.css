@@ -1,0 +1,41 @@
+.search-form {
+  display: flex;
+  max-width: 492px;
+  gap: 8px;
+}
+
+.search-form__input {
+  border: none;
+  border-radius: 3px;
+  background: #FFF;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  padding: 0 19px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  color: #606F7A;
+}
+
+.search-form__input::placeholder {
+  color: #B7B7B7;
+}
+
+.search-form__submit {
+  border-radius: 3px;
+  background: #5DAAFF;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.15);
+  color: #FFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  padding: 18px 30px;
+  border: none;
+  cursor: pointer;
+}
