@@ -2,51 +2,92 @@ import './FurnitureParametersForm.css';
 import {useState} from 'react';
 import { InputNumber } from 'primereact/inputnumber';
 import {useForm, Controller} from "react-hook-form";
+import { v4 as uuidv4 } from 'uuid';
 
-export default function FurnitureParametersForm() {
+export default function FurnitureParametersForm({furniture, setAddedFurnitureList, addedFurnitureList, setStep}) {
 	const [counter, setCounter] = useState(1);
 	
 	const {
 		handleSubmit,
+		register,
 		control,
-		formState: {
-			isValid
-		}
-	} = useForm({defaultValues: {
-		
+		reset
+	} = useForm({mode: 'onChange',defaultValues: {
+			counter: 1,
+			volume: '',
+			netWeight: '',
+			grossWeight: '',
+			costForUnit: ''
 		}});
 	
+	function onSubmit(data) {
+		const newAddedFurnitura = {...data, name: furniture.name, image: furniture.image, id: uuidv4(), quantity: counter};
+		setAddedFurnitureList([...addedFurnitureList, newAddedFurnitura]);
+		setStep(3);
+		reset();
+	}
+	
 	return (
-		<form className="furniture-parameters-form">
+		<form className="furniture-parameters-form" onSubmit={handleSubmit(onSubmit)}>
 			<div className="furniture-parameters-form__header">
 				<img
-					src="https://s3-alpha-sig.figma.com/img/1532/f328/d3995ec000fbf1af0bab9c2a3ec7d77f?Expires=1698019200&Signature=lj55kxJnvhHQv8nE9qMg2n1hopPkavFuCxsWCXQcXKjp3~IBfKEWgwXpCDRy4rDogCJwryBaX6S428oJ3YBqbhCiYXsuE75QCmPM-3Xk-GN~fQPF-Jiz20J4b-w1HjfMMZYxon0PojNWkAbZwjahW~wIFmsU9hgW71LOu85lz1ZqRMSbYmBdAE2vfg7c9UYu5PTRMSqgwnoW1EHhuVDz9Pv13RW825AvarH~PEWQYz0Rm-QswFeZ1eNODkRIOZvmUn2KVM-Sb6dZ3RzlUmracxmvTss7F8qpdJhM2HNem9qVvI7HNHhcmTSA~h1JeIukk3o0nxGs0Sc~pyRU4t7s2w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-					alt=""
+					src={furniture.image}
+					alt={furniture.name}
 					className="furniture-parameters-form__image"
 				/>
-				<h3 className="furniture-parameters-form__title">Диван кровать, раскладывается</h3>
+				<h3 className="furniture-parameters-form__title">{furniture.name}</h3>
 			</div>
 			<label className="furniture-parameters-form__label">Кол-во:
 				<div className="furniture-parameters-form__counter-container">
 					<button onClick={() => setCounter(counter - 1)} disabled={counter === 1} type="button" className="furniture-parameters-form__counter-button furniture-parameters-form__counter-button_decrease"></button>
-					<input className="furniture-parameters-form__counter" type="text" value={counter} disabled/>
+					<input {...register('counter')} className="furniture-parameters-form__counter" type="text" value={counter} disabled/>
 					<button onClick={() => setCounter(counter + 1)} type="button" className="furniture-parameters-form__counter-button furniture-parameters-form__counter-button_increase"></button>
 				</div>
 			</label>
-			{/*<input className="furniture-parameters-form__input" type="text" placeholder="Общий объем, м3"/>*/}
-			{/*<input className="furniture-parameters-form__input" type="text" placeholder="Общая масса нетто, кг"/>*/}
-			{/*<input className="furniture-parameters-form__input" type="text" placeholder="Общая масса брутто, кг"/>*/}
-			{/*<input className="furniture-parameters-form__input" type="text" placeholder="Стоимость одной единицы"/>*/}
 			<Controller
 				name="volume"
 				control={control}
+				rules={{
+					required: 'Введите объем'
+				}}
 				render={({field}) => (
-					<InputNumber id={field.name} inputRef={field.ref} value={field.value} onBlur={field.onBlur} onValueChange={(e) => field.onChange(e)} suffix=" м3"/>
+					<InputNumber id={field.name} inputRef={field.ref} value={field.value} onBlur={field.onBlur} onValueChange={(e) => field.onChange(e)} suffix=" м3" inputClassName="furniture-parameters-form__input" placeholder="Общий объем, м3"/>
+				)}
+			/>
+			<Controller
+				name="netWeight"
+				control={control}
+				rules={{
+					required: 'Введите массу'
+				}}
+				render={({field}) => (
+					<InputNumber id={field.name} inputRef={field.ref} value={field.value} onBlur={field.onBlur} onValueChange={(e) => field.onChange(e)} suffix=" кг" inputClassName="furniture-parameters-form__input" placeholder="Общий объем, м3"/>
+				)}
+			/>
+			<Controller
+				name="grossWeight"
+				control={control}
+				rules={{
+					required: 'Введите массу'
+				}}
+				render={({field}) => (
+					<InputNumber id={field.name} inputRef={field.ref} value={field.value} onBlur={field.onBlur} onValueChange={(e) => field.onChange(e)} suffix=" кг" inputClassName="furniture-parameters-form__input" placeholder="Общая масса брутто, кг"/>
+				)}
+			/>
+			<Controller
+				name="costForUnit"
+				control={control}
+				rules={{
+					required: 'Введите стоимость'
+				}}
+				render={({field}) => (
+					<InputNumber id={field.name} inputRef={field.ref} value={field.value} onBlur={field.onBlur} onValueChange={(e) => field.onChange(e)} suffix=" руб." inputClassName="furniture-parameters-form__input" placeholder="Стоимость одной единицы"/>
 				)}
 			/>
 			<div className="furniture-parameters-form__buttons">
-				<button className="furniture-parameters-form__button">Сбросить</button>
-				<button className="furniture-parameters-form__button">Добавить</button>
+				<button className="furniture-parameters-form__button" type="reset"
+				 onClick={() => reset()}>Сбросить</button>
+				<button className="furniture-parameters-form__button" type="submit">Добавить</button>
 			</div>
 		</form>
 	);

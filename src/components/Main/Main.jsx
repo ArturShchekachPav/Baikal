@@ -1,27 +1,12 @@
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import 'primereact/resources/primereact.css';
 import Header from '../Header/Header';
-import {useForm, Controller} from "react-hook-form";
-import Select, {components} from 'react-select';
-import { AutoComplete } from "primereact/autocomplete";
+import {useForm} from "react-hook-form";
 import {useState} from "react";
 import './Main.css';
+import SelectInput from '../SelectInput/SelectInput';
+import {RUSSIAN_CITIES, CURRENCIES} from '../../utils/constants'
+import ChineseCitiesAutocomplete from '../ChineseCitiesAutocomplete/ChineseCitiesAutocomplete';
 
 export default function Main({setStep, setDeliveryData}) {
-	const russianCities = [
-		{ value: 'msk', label: 'Москва' },
-		{ value: 'spb', label: 'Петеребург' },
-		{ value: 'vdk', label: 'Владивосток' }
-	];
-
-	const currencies = [
-		{ value: 'usd', label: 'USD', exchangeRate: '64,54' },
-		{ value: 'cyn', label: 'CYN', exchangeRate: '70' },
-		{ value: 'rub', label: 'RUB', exchangeRate: '80' }
-	];
-
-	const chineseCities = ['Пекин', 'Пинглианг', 'Шанхай', 'Хуньчунь', 'Гонг-Конг'];
-
 	const {
 		handleSubmit,
 		control,
@@ -29,32 +14,16 @@ export default function Main({setStep, setDeliveryData}) {
 			isValid
 		}
 	} = useForm({defaultValues: {
-			delivery: russianCities[0],
-			currency: currencies[0]
+			delivery: RUSSIAN_CITIES[0],
+			currency: CURRENCIES[0]
 		}});
-
-	const [items, setItems] = useState([]);
-	const [exchangeRate, setExchangeRate] = useState(currencies[0].exchangeRate);
-
-	const search = (event) => {
-		setItems(chineseCities.filter(nameOfCity => nameOfCity.includes(event.query)));
-	};
+	
+	const [exchangeRate, setExchangeRate] = useState(CURRENCIES[0].exchangeRate);
 
 	function onSubmit(data) {
 		setDeliveryData(data);
 		setStep(2);
 	}
-
-	const DropdownIndicator = (DropdownIndicatorProps
-	) => {
-		return (
-			<components.DropdownIndicator {...DropdownIndicatorProps}>
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-					<path d="M5 7L10 13L15 7" stroke="#606F7A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</components.DropdownIndicator>
-		);
-	};
 
 	return (
 		<div className="main container">
@@ -80,40 +49,15 @@ export default function Main({setStep, setDeliveryData}) {
 				}
 				<fieldset className="main__fieldset">
 					<div className="main__form-field">
-						<Controller
-							name="shipment"
-							control={control}
-							rules={{ required: 'Value is required.' }}
-							render={({ field }) => (
-								<AutoComplete panelStyle={{zIndex: 5}} scrollHeight='auto' inputId={field.name} value={field.value} onChange={field.onChange} inputRef={field.ref} suggestions={items} completeMethod={search}/>
-							)}
-						/>
+						<ChineseCitiesAutocomplete control={control} />
 						<label className="main__label" htmlFor="place-of-shipment">Откуда</label>
 					</div>
 					<div className="main__form-field">
-						<Controller
-							name="delivery"
-							control={control}
-							rules={{ required: 'City is required.' }}
-							render={({ field}) => (
-								<Select components={{ DropdownIndicator }} options={russianCities} isSearchable={false} required={true} className="select" classNamePrefix="select" hideSelectedOptions={true} id={field.name} value={field.value} onChange={(e) => field.onChange(e)}/>
-							)}
-						/>
+						<SelectInput name="delivery" options={RUSSIAN_CITIES} control={control}/>
 						<label className="main__label" htmlFor="delivery">Куда</label>
 					</div>
 					<div className="main__form-field">
-						<Controller
-							name="currency"
-							control={control}
-							rules={{ required: 'Currency is required.' }}
-							render={({ field}) => (
-								<Select components={{ DropdownIndicator }} options={currencies} isSearchable={false} required={true} className="select" classNamePrefix="select" hideSelectedOptions={true} id={field.name} value={field.value} onChange={(e) => {
-									field.onChange(e);
-									setExchangeRate(e.exchangeRate);
-								}
-								}/>
-							)}
-						/>
+						<SelectInput onChange={(e) => setExchangeRate(e.exchangeRate)} name="currency" options={CURRENCIES} control={control}/>
 						<label className="main__label" htmlFor="currency">Валюта</label>
 					</div>
 					<div className="main__form-field">

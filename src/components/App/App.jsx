@@ -7,12 +7,13 @@ import DeliveryCalculation from '../DeliveryCalculation/DeliveryCalculation';
 function App() {
   const [step, setStep] = useState(1);
   const [deliveryData, setDeliveryData] = useState({});
+  const [addedFurnitureList, setAddedFurnitureList] = useState([]);
   
   return (
     <div className="app">
       <Routes>
         <Route path="/contacts" element={<Contacts />}/>
-        <Route path="/" element={<DeliveryCalculation step={step} setStep={setStep} setDeliveryData={setDeliveryData}/>} />
+        <Route path="/" element={<DeliveryCalculation step={step} setStep={setStep} setDeliveryData={setDeliveryData} deliveryData={deliveryData} setAddedFurnitureList={setAddedFurnitureList} addedFurnitureList={addedFurnitureList}/>} />
       </Routes>
     </div>
   );

@@ -8,11 +8,15 @@
 }
 
 .p-scrollpanel.general-furniture-list .p-scrollpanel-content {
-  padding: 0 6px 0 0;
+  padding: 0 6px 2px 0;
 }
 
 .p-scrollpanel.general-furniture-list .p-scrollpanel-wrapper {
   border-right: 4px solid rgba(140, 140, 140, 0.15);
+}
+
+.p-scrollpanel.general-furniture-list .p-scrollpanel-wrapper:has(+.p-scrollpanel-bar.p-scrollpanel-hidden) {
+  border-right: 4px solid transparent;
 }
 
 .p-scrollpanel.general-furniture-list .p-scrollpanel-bar {

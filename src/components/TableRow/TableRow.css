@@ -1,0 +1,42 @@
+.table-row__cell {
+  background: #F8FAFF;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid #E2E4EA;
+  border-bottom: 1px solid #E2E4EA;
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 153.333%;
+  letter-spacing: -1px;
+}
+
+.table-row__cell:first-child {
+  border-left: 1px solid #E2E4EA;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 123px 161fr 105fr 190fr 197fr 165fr 179fr 128fr;
+}
+
+.table-row__image {
+  width: 120px;
+  height: 97px;
+}
+
+.table-row__button {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-image: url(../../images/delete-button.svg);
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

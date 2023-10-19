@@ -1,0 +1,5 @@
+.calculation__buttons {
+  display: flex;
+  gap: 12px;
+  min-height: 55px;
+}

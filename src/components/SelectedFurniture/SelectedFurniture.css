@@ -1,0 +1,65 @@
+.selected-furniture {
+  max-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-furniture__main {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.selected-furniture__title {
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -1px;
+  margin: 48px 0 40px 0;
+}
+
+.selected-furniture__buttons {
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+}
+
+.selected-furniture__button {
+  color: #FFF;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  border-radius: 3px;
+  background-color: #5DAAFF;
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.15);
+  min-width: 256px;
+  padding: 19px 0;
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-furniture__button_add:after {
+  content: "";
+  background-image: url(../../images/add-icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  width: 13px;
+  height: 13px;
+}

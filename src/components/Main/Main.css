@@ -133,111 +133,6 @@
   transform: rotate(180deg);
 }
 
-.p-inputtext {
-  width: 100%;
-}
-
-.select {
-  width: 100%;
-  min-height: 100%;
-  border-right: 1px solid #DEDEDE;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.select:has(.select__control--menu-is-open) {
-  border-right: 1px solid transparent;
-}
-
-.select .select__control, .select .select__control--is-focused {
-  border-radius: 0;
-  border-top: none;
-  border-bottom: none;
-  -webkit-justify-content: center;
-  justify-content: center;
-  box-shadow: none;
-  border-color: transparent;
-}
-
-.select .select__control:hover {
-  border-color: transparent;
-}
-
-.select__indicator-separator {
-  display: none;
-}
-
-.select .select__indicator {
-  padding: 0;
-  margin-left: 9px;
-}
-
-.select .select__value-container {
-  padding: 0;
-  -webkit-flex: initial;
-  -ms-flex: initial;
-  flex: initial;
-}
-
-.p-autocomplete {
-  min-height: 100%;
-  border-right: 1px solid #DEDEDE;
-}
-
-.p-inputwrapper-focus {
-  border-right: 1px solid transparent;
-}
-
-.p-autocomplete-input {
-  padding: 0 0 0 30px;
-  border: none;
-}
-
-.p-inputtext:enabled:focus {
-  border: none;
-  box-shadow: none;
-}
-
-.select .select__single-value, .select .select__option, .p-autocomplete-input, .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
-  color: #606F7A;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.2px;
-}
-
-.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
-  padding: 0 0 0 30px;
-  min-height: 67px;
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #EBEBEB;
-}
-
-.select .select__option {
-  padding: 0;
-  min-height: 67px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #EBEBEB;
-  background-color: #fff;
-}
-
-.select .select__option:active {
-  background-color: #fff;
-}
-
-.p-autocomplete-panel {
-  border-top: 1px solid #EBEBEB;
-  margin-top: 9px;
-  box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.10);
-  border-radius: 3px;
-}
-
 .main__form-field:has(.p-inputwrapper-focus), .main__form-field:has(.select__control--menu-is-open) {
   box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.10);
   border-radius: 3px;
@@ -253,16 +148,6 @@
   border-right: 1px solid transparent;
 }
 
-.p-autocomplete-panel .p-autocomplete-items {
-  padding: 0;
-}
-
-.select .select__menu {
-  border-radius: 0;
-  margin: 9px 0 0 0;
-  box-shadow: 0 4px 40px 0 rgba(93, 170, 255, 0.10);
-}
-
-.select .select__menu-list {
-  padding: 0;
+#root:has(.main) + .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  padding: 0 0 0 30px;
 }

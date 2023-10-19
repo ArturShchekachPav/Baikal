@@ -1,0 +1,70 @@
+.editable-table-cell {
+  position: relative;
+  border-right: 1px solid #E2E4EA;
+  border-bottom: 1px solid #E2E4EA;
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 153.333%;
+  letter-spacing: -1px;
+  background: #F8FAFF;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.editable-table-cell__form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.editable-table-cell:first-child {
+  border-left: 1px solid #E2E4EA;
+}
+
+.editable-table-cell__input {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: #606F7A;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -1px;
+}
+
+.editable-table-cell__input:disabled {
+  opacity: initial;
+}
+
+.editable-table-cell__button {
+  position: absolute;
+  background-image: url(../../images/edit-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  right: 30%;
+  z-index: 1;
+  cursor: pointer;
+  visibility: hidden;
+  display: none;
+}
+
+.editable-table-cell:hover .editable-table-cell__button {
+  visibility: visible;
+  display: block;
+}

@@ -2,7 +2,6 @@
   min-height: 100vh;
   background-color: #EFF3F9;
   box-sizing: border-box;
-  padding-top: 49px;
   position: relative;
   overflow: hidden;
 }
@@ -22,7 +21,7 @@
 
 .container {
   max-width: 1346px;
-  padding: 0 50px;
+  padding: 49px 50px 0 50px;
   margin: 0 auto;
   box-sizing: border-box;
 }

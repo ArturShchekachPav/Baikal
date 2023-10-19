@@ -3,7 +3,7 @@ import FurnitureSelection from '../FurnitureSelection/FurnitureSelection';
 import SelectedFurniture from '../SelectedFurniture/SelectedFurniture';
 import Calculation from '../Calculation/Calculation';
 
-export default function DeliveryCalculation({step, setStep, setDeliveryData}) {
+export default function DeliveryCalculation({step, setStep, setDeliveryData, deliveryData, addedFurnitureList, setAddedFurnitureList}) {
 	switch (step) {
 		case 1:
 			return (
@@ -13,9 +13,10 @@ export default function DeliveryCalculation({step, setStep, setDeliveryData}) {
 				</>
 			);
 		case 2:
-			return <FurnitureSelection />;
+			return <FurnitureSelection setDeliveryData={setDeliveryData}  deliveryData={deliveryData} addedFurnitureList={addedFurnitureList} setAddedFurnitureList={setAddedFurnitureList} setStep={setStep}/>;
 		case 3:
-			return <SelectedFurniture />;
+			console.log(addedFurnitureList);
+			return <SelectedFurniture setDeliveryData={setDeliveryData}  deliveryData={deliveryData} addedFurnitureList={addedFurnitureList} setAddedFurnitureList={setAddedFurnitureList} setStep={setStep} />;
 		case 4:
 			return <Calculation />;
 	}
